@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
+        /* Basic body styling */
         body {
             margin: 0;
             font-family: sans-serif;
@@ -15,6 +16,7 @@
             transition: background 0.7s;
         }
 
+        /* Container styling */
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -25,6 +27,7 @@
             color: #020202;
         }
 
+        /* Top bar styling */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -34,6 +37,7 @@
             margin-bottom: 2rem;
         }
 
+        /* Logo styling with hover effect */
         .logo {
             width: 80px;
             height: 80px;
@@ -42,10 +46,12 @@
             transition: transform 0.3s;
         }
 
+        /* Hover effect for logo */
         .logo:hover {
             transform: scale(1.1);
         }
 
+        /* Styling for select dropdown */
         select {
             padding: 8px 16px;
             border-radius: 9999px;
@@ -53,6 +59,7 @@
             cursor: pointer;
         }
 
+        /* Tab buttons styling */
         .tabs {
             display: flex;
             justify-content: center;
@@ -61,6 +68,7 @@
             margin-bottom: 2rem;
         }
 
+        /* tab button styling */
         .tab-btn {
             padding: 10px 24px;
             border-radius: 9999px;
@@ -71,20 +79,24 @@
             border: none;
         }
 
+        /* Active tab button styling */
         .tab-btn.active {
             background-color: #3057d6ad;
             color: white;
         }
 
+        /* Hover effect for tab buttons */
         .tab-btn:hover {
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
+        /* Tab content container */
         .tab-content {
             min-height: 300px;
             animation: fadeIn 0.6s ease-in-out;
         }
 
+        /* Fade-in animation for content */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -97,12 +109,14 @@
             }
         }
 
+        /* Team container styling */
         .team-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
 
+        /* Individual team card styling */
         .team-card {
             background: #ffffff33;
             border-radius: 16px;
@@ -114,6 +128,7 @@
             display: inline-block;
         }
 
+        /* Team member image styling */
         .team-card img {
             width: 96px;
             height: 96px;
@@ -121,12 +136,14 @@
             margin-bottom: 12px;
         }
 
+        /* Links inside team cards */
         .team-links a {
             margin: 0 8px;
             color: #070707;
             text-decoration: none;
         }
 
+        /* Mobile responsive styling */
         @media (max-width: 600px) {
             .container {
                 margin: 20px;
@@ -137,16 +154,19 @@
                 font-size: 15px;
             }
 
+            /* Mobile specific team card size */
             .team-card {
                 width: 100%;
                 max-width: 320px;
             }
 
+            /* Smaller logo on mobile */
             .logo {
                 width: 64px;
                 height: 64px;
             }
 
+            /* Scroll to top button styling */
             #scrollTopBtn {
                 display: none;
                 position: fixed;
@@ -161,23 +181,25 @@
                 cursor: pointer;
                 padding: 12px;
                 border-radius: 50%;
-                /* يجعله دائريًا */
+                /* Makes it circular*/
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
                 transition: opacity 0.3s, transform 0.3s;
                 width: 50px;
-                /* عرض الزر */
+                /* Show button*/
                 height: 50px;
-                /* ارتفاع الزر */
+                /* Button height*/
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
 
+            /* Hover effect for scroll button */
             #scrollTopBtn:hover {
                 background-color: #1f3a99;
                 transform: scale(1.1);
             }
 
+            /* Hide button when focused */
             #scrollTopBtn:focus {
                 outline: none;
             }
@@ -189,6 +211,7 @@
 
 <body>
     <div class="container">
+        <!-- Top bar with logo and language selector -->
         <div class="top-bar">
             <img src="assets/logo_ubt.jpg" alt="Logo" class="logo" onclick="window.location.href=''" />
             <select id="languageSelect" onchange="changeLanguage(this.value)">
@@ -196,25 +219,27 @@
                 <option value="ar">العربية</option>
             </select>
         </div>
-
+        <!-- Tabs container -->
         <div class="tabs" id="tabsContainer"></div>
-
+        <!-- Content of the selected tab -->
         <div class="tab-content" id="tabContent"></div>
-
+        <!-- Scroll to top button -->
         <button id="scrollTopBtn" title="Go to top">↑</button>
 
 
     </div>
 
     <script>
+        // Tabs to be displayed
         const tabs = ['about', 'team', 'vision', 'values'];
+        // Translations for each tab for Arabic
         const translations = {
             about: 'من نحن',
             team: 'فريق العمل',
             vision: 'رؤيتنا',
             values: 'قيمنا'
         };
-
+        // Team members data
         const teamMembers = [
             { name: 'Sultan Bashammakh', role: 'UA0439', bio: 'Student at University of Business and Technology, passionate about technology and innovation.', linkedin: 'https://www.linkedin.com/in/%D8%B3%D9%84%D8%B7%D8%A7%D9%86-%D8%A8%D8%A7%D8%B4%D9%85%D8%A7%D8%AE-161342264?trk=contact-info', github: 'https://github.com/SerenityCS' },
             { name: 'Majed Altaifi', role: 'VA0255', bio: 'Student at University of Business and Technology, passionate about technology and innovation.', linkedin: 'https://www.linkedin.com/in/majed-al-taifi-8661122b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', github: 'https://github.com/majedaltaifi' },
@@ -227,11 +252,11 @@
         let language = localStorage.getItem('lang') || 'en';
 
         document.getElementById('languageSelect').value = language;
-
+        /* Translates the tabs based on the current language */
         function translate(tab) {
             return language === 'en' ? tab.charAt(0).toUpperCase() + tab.slice(1) : translations[tab];
         }
-
+        /* Renders the tabs dynamically */
         function renderTabs() {
             const container = document.getElementById('tabsContainer');
             container.innerHTML = '';
@@ -256,7 +281,7 @@
             renderTabs();
             renderContent();
         }
-
+        /* Renders the content of the selected tab */
         function renderContent() {
             const content = document.getElementById('tabContent');
             if (currentTab === 'about') {
@@ -308,7 +333,7 @@
                 switchTab(tabs[index - 1]);
             }
         });
-        // زر الرجوع للأعلى
+        // Scroll to Top
         const scrollBtn = document.getElementById("scrollTopBtn");
 
         window.onscroll = function () {
