@@ -1,21 +1,63 @@
 <!DOCTYPE html>
 <html lang="ar">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="3;url=ss.html">
-    <title>التحويل إلى الصفحة الجديدة</title>
-    <script>
-        // استخدام JavaScript للتحويل أيضًا بعد 3 ثوانٍ
-        setTimeout(function () {
-            window.location.href = 'ss.html';
-        }, 3000);
-    </script>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحبا بكم في مشروع ماده SE421</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #60a5fa, #fff);
+        }
+
+        .container {
+            text-align: center;
+            background: linear-gradient(to bottom right, #60a5fa, #fff);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #043d83;
+        }
+
+        p {
+            color: #111010;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #358FFC;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #358ffc;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>جاري التحويل إلى الصفحة الجديدة...</h1>
-    <p>إذا لم يتم التحويل تلقائيًا، يمكنك الضغط <a href="ss.html">هنا</a>.</p>
-</body>
 
+    <div class="container">
+        <h1>أهلاً وسهلاً بك!</h1>
+        <p>مرحبًا بك في موقعنا، نحن سعداء بوجودك هنا!</p>
+        <button onclick="window.location.href='ss.html'">ابدأ الآن</button>
+    </div>
+
+</body>
 </html>
+
